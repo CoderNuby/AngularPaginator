@@ -1,0 +1,53 @@
+<!-- ============================================================== -->
+<!-- Main wrapper - style you can find in pages.scss -->
+<!-- ============================================================== -->
+<div id="main-wrapper">
+    <div class="page-wrapper">
+        <!-- Container fluid  -->
+        <!-- ============================================================== -->
+        <div class="container-fluid">
+          <div *ngIf="loading" class="row animated fadeIn">
+            <div class="col-sm-12">
+              <div class="alert alert-warning text-center">
+                <strong>Loading</strong>
+                <br>
+                <i class="fa fa-refresh fa-spin fa-2x"></i>
+                <br>
+                <span>Please wait</span>
+              </div>
+            </div>
+          </div>
+          
+          <table *ngIf="!loading" class="table table-bordered table-dark">
+            <thead>
+              <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Age</th>
+                <th scope="col">gender</th>
+                <th scope="col"></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let user of users">
+                <th scope="row">{{user.name}}</th>
+                <th scope="row">{{user.age}}</th>
+                <th scope="row">{{user.gender}}</th>
+                <th scope="row"><button (click)="deleteUser(user._id)" type="button" class="btn btn-outline-danger">Delete</button></th>
+              </tr>
+            </tbody>
+          </table>
+          
+          <app-paginator
+            [totalRecords]="totalUsers"
+            [recordsPerPage]="recordsPerPage"
+            (sendPaginator)="changePage($event)"
+            >
+          </app-paginator>
+  
+        </div>
+        <!-- END Container fluid  -->
+        <!-- ============================================================== -->
+    </div>
+    <!-- ============================================================== -->
+    <!-- END Page wrapper  -->
+</div>
