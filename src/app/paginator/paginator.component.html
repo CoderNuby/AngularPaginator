@@ -2,7 +2,7 @@
     <div class="flex-row animated fadeIn">
       <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
         <div class="btn-group" role="group" aria-label="First group">
-          <button [disabled]="disableLeftButton" class="btn btn-secondary" type="button" onclick="this.blur();">
+          <button (click)="goToPage(1)" [disabled]="disableLeftButton" class="btn btn-secondary" type="button" onclick="this.blur();">
             <i class="fa fa-angle-double-left"></i>
           </button>
         </div>
@@ -22,7 +22,7 @@
           </button>
         </div>
         <div class="btn-group" role="group" aria-label="Third group">
-          <button [disabled]="disableRightButton" class="btn btn-secondary" type="button" onclick="this.blur();">
+          <button (click)="goToPage(totalPagesArray.length)" [disabled]="disableRightButton" class="btn btn-secondary" type="button" onclick="this.blur();">
             <i class="fa fa-angle-double-right"></i>
           </button>
         </div>
