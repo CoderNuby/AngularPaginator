@@ -92,7 +92,7 @@ export class PaginatorComponent implements OnInit, OnChanges {
 
   emitStartRecordsFrom(){
     this.sendPaginator.emit(this.startRecordsFrom); //emit the skip records or in other words where the records will start
-    //this.sendPaginator.emit(this.startRecordsFrom); //Uncomment this if you need to emit page
+    //this.sendPaginator.emit(this.currentPage); //Uncomment this if you need to emit page
   }
 
   calculatePageToShow(page: number){
